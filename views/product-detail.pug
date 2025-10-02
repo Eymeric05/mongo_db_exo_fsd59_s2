@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    h2 
+      span.title-emoji 📋
+      span.title-text Détail du produit
+    .product-detail
+      h3= product.society
+      .product-info
+        p
+          strong 💰 Prix : 
+          | #{product.price}€
+        p
+          strong 📦 Quantité en stock : 
+          | #{product.qty} unités
+        p
+          strong 📅 Année : 
+          | #{product.year}
+        p
+          strong 📏 Dimensions : 
+          | #{product.size.h} x #{product.size.w} #{product.size.uom}
+        if product.sale
+          p.sale-info 🔥 Produit en promotion
+        else
+          p.sale-info ✅ Prix standard
+      
+      .actions
+        a.btn.btn-primary(href="/") 
+          span ← Retour au catalogue
+        if user
+          a.btn.btn-warning(href=`/modify/${product._id}`) 
+            span ✏️ Modifier le produit

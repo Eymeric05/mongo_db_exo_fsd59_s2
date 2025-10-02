@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+    h2 
+      span.title-emoji 🛍️
+      span.title-text Catalogue des produits
+    p.total Total de produits en stock : #{totalProducts}
+    
+    .products-grid
+      each product in products
+        .product-card
+          a(href=`/detail/${product._id}`)
+            h3= product.society
+            p 📦 Stock : #{product.qty} unités
+            p 💰 Prix : #{product.price}€
+            if product.sale
+              span.sale-badge 🔥 En promotion

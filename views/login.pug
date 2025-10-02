@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    h2 
+      span.title-emoji 🔐
+      span.title-text Connexion à StockHub
+    if error
+      .alert.alert-error ⚠️ #{error}
+    
+    form.login-form(action="/login", method="POST")
+      .form-group
+        label(for="login") 👤 Nom d'utilisateur :
+        input#login(type="text", name="login", required, placeholder="Votre nom d'utilisateur")
+      
+      .form-group
+        label(for="password") 🔒 Mot de passe :
+        input#password(type="password", name="password", required, placeholder="Votre mot de passe")
+      
+      .form-actions
+        button.btn.btn-primary(type="submit") 
+          span 🚀 Se connecter
+        a.btn.btn-secondary(href="/") 
+          span 🏠 Retour à l'accueil

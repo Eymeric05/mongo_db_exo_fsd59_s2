@@ -1,0 +1,40 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title StockHub - Gestion d'inventaire
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap", rel="stylesheet")
+  body
+    header
+      nav
+        h1 
+          span.logo-icon 📦
+          | StockHub
+        ul
+          li
+            a(href="/") 
+              span.nav-icon 🏠
+              | Accueil
+          if user
+            li
+              a(href="/add") 
+                span.nav-icon ➕
+                | Ajouter un produit
+            li
+              a(href="/logout") 
+                span.nav-icon 🚪
+                | Déconnexion
+          else
+            li
+              a(href="/login") 
+                span.nav-icon 🔐
+                | Connexion
+    main
+      block content
+    footer
+      p © 2025 StockHub - Solution de gestion d'inventaire moderne
+    block scripts
