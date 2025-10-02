@@ -1,4 +1,4 @@
-# Product Shop
+# Stockhub
 
 Application de gestion de produits avec authentification et base de données MongoDB.
 
